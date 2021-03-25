@@ -112,7 +112,11 @@
     margin: 0 30px 30px 30px;
 
     #datepicker {
-      margin: 30px 60px 60px 60px;
+      margin: 30px auto 60px auto;
+
+      @media screen and (min-width: 500px) {
+        margin: 30px 60px 60px 60px;
+      }
     }
 
     .clear-filters {

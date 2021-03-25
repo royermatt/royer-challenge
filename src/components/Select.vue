@@ -133,9 +133,12 @@
       li {
         padding: 8px 6px;
 
-        &.active,
         &:hover {
           background: #00529b;
+        }
+
+        &.active {
+          background: darken(#00529b, 10%);
         }
       }
     }

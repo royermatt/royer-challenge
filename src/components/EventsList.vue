@@ -60,187 +60,190 @@
     },
     methods: {
         async fetchUpcomingEvents() {
-            this.loading = true;
+          this.loading = true;
 
-            let url = "https://challenge.nfhsnetwork.com/v2/search/events/upcoming?card=true&size=50&start=0";
+          let url = "https://challenge.nfhsnetwork.com/v2/search/events/upcoming?card=true&size=50&start=0";
 
-            if(this.assocation) {
-                url += "&state_association_key=" + this.assocation;
-            }
+          if(this.assocation) {
+            url += "&state_association_key=" + this.assocation;
+          }
 
-            if(this.dateRange.startDate) {
-                url += "&from=" + moment(this.dateRange.startDate).toISOString();
-            }
+          if(this.dateRange.startDate) {
+            url += "&from=" + moment(this.dateRange.startDate).toISOString();
+          }
 
-            if(this.dateRange.endDate) {
-                url += "&to=" + moment(this.dateRange.endDate).toISOString();
-            }
+          if(this.dateRange.endDate) {
+            url += "&to=" + moment(this.dateRange.endDate).toISOString();
+          }
 
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    this.result = data;
-                    this.loading = false;
-                });
+          fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                this.result = data;
+                this.loading = false;
+            });
         },
     },
     watch: {
         assocation: function() {
-            this.fetchUpcomingEvents();
+          this.fetchUpcomingEvents();
         },
         dateRange: function() {
-            this.fetchUpcomingEvents();
+          this.fetchUpcomingEvents();
         }
     },
     mounted() {
-        this.fetchUpcomingEvents();
+      this.fetchUpcomingEvents();
     },
   }
 </script>
 
 <style lang="scss">
-    #events {
-        margin: 30px 15px;
+  #events {
+    margin: 30px 15px;
 
-        table {
-            color: rgba(255,255,255,0.8);
-            text-align: left;
-            border-collapse: collapse;
-            margin: 0 auto;
+    table {
+      color: rgba(255,255,255,0.8);
+      text-align: left;
+      border-collapse: collapse;
+      margin: 0 auto;
 
-            a {
-                text-decoration: none;
-                color: #ffffff;
-
-                &:hover {
-                    text-decoration: underline;
-                }
-            }
-
-            th, td {
-                padding: 10px 15px;
-            }
-            
-                    
-            & th:nth-child(1),
-            & td:nth-child(1),
-            & th:nth-child(3),
-            & td:nth-child(3) {
-                display: none;
-            }
-
-            @media screen and (min-width: 700px) {
-                & th:nth-child(3),
-                & td:nth-child(3) {
-                    display: block;
-                }
-            }
-
-            @media screen and (min-width: 900px) {
-                & th:nth-child(1),
-                & td:nth-child(1) {
-                    display: block;
-                }
-
-                .date {
-                    min-width: 170px;
-                }
-            }
-
-            tbody {
-                tr {
-                    outline: 1px solid #efefef;
-                    background-color: #001b34;
-                    transition: all .2s ease-in-out;
-
-                    &:hover {
-                        transform: scale(1.05);
-                    }
-
-                    .headline {
-                        font-weight: bold;
-                    }
-                    .key,
-                    .subheadline,
-                    .date {
-                        font-size: 0.8em;
-                    }
-
-                    td {
-
-                        &:first-child {
-                            border-left-width: 1px;
-                        }
-                        &:last-child {
-                            border-right-width: 1px;
-                        }
-                    }
-                }
-            }
-        }
-
-        .item-count {
-            letter-spacing: 1px;
-            font-size: 0.8em;
-            margin-top: 30px;
-        }
-        
-        @media screen and (min-width: 500px) {
-            & {
-                margin: 30px;
-            }
-        }
-    }
-
-    .event-card {
-        border: 1px solid hsla(0,0%,100%,.3);
-        border-radius: 3px;
-        background: #001b34;
-        padding: 40px 20px 20px 20px;
-        display:inline-block;
-        width: 100%;
-        max-width: 350px;
-        height: 142px;
-        margin: 0 20px 20px 0;
+      a {
         text-decoration: none;
         color: #ffffff;
-        position: relative;
-        transition: all .2s ease-in-out;
-        vertical-align: top;;
-        
+
         &:hover {
-            transform: scale(1.05);
+          text-decoration: underline;
         }
+      }
 
-        .key {
-            display: block;
-            font-size: 0.8em;
-            position: absolute;
-            top: 10px;
-            right: 10px;
+      th, td {
+        padding: 10px 15px;
+      }
+              
+      & th:nth-child(1),
+      & td:nth-child(1),
+      & th:nth-child(3),
+      & td:nth-child(3) {
+        display: none;
+      }
+
+      @media screen and (min-width: 700px) {
+        & th:nth-child(3),
+        & td:nth-child(3) {
+          display: block;
         }
+      }
 
-        .headline {
-            font-size: 1.5em;
-            display: block;
-            font-weight: bold;
-            margin: 10px 0;
-            text-align: left;
-        }
-
-        .subheadline {
-            font-size: 0.9em;
-            display: block;
-            text-align: left;
+      @media screen and (min-width: 900px) {
+        & th:nth-child(1),
+        & td:nth-child(1) {
+          display: block;
         }
 
         .date {
-            display: block;
-            text-align: right;
-            border-top: 1px solid hsla(0,0%,100%,.3);
-            margin-top: 20px;
-            padding: 10px 5px 0 5px;
-            font-size: 0.8em;
+          min-width: 170px;
         }
+      }
+
+      tbody {
+        tr {
+          outline: 1px solid #efefef;
+          background-color: #001b34;
+          transition: all .2s ease-in-out;
+
+          &:hover {
+            transform: scale(1.05);
+          }
+
+          .headline {
+            font-weight: bold;
+          }
+          .key,
+          .subheadline,
+          .date {
+            font-size: 0.8em;
+          }
+
+          td {
+            &:first-child {
+              border-left-width: 1px;
+            }
+            &:last-child {
+              border-right-width: 1px;
+            }
+          }
+        }
+      }
     }
+
+    .item-count {
+      letter-spacing: 1px;
+      font-size: 0.8em;
+      margin-top: 30px;
+    }
+    
+    @media screen and (min-width: 500px) {
+      margin: 30px;
+    }
+    
+    .event-card {
+      border: 1px solid hsla(0,0%,100%,.3);
+      border-radius: 3px;
+      background: #001b34;
+      padding: 20px 20px 40px 20px;
+      display:inline-block;
+      width: 100%;
+      max-width: 380px;
+      min-height: 220px;
+      margin: 0 20px 20px 0;
+      text-decoration: none;
+      color: #ffffff;
+      position: relative;
+      transition: all .2s ease-in-out;
+      vertical-align: top;
+      box-sizing: border-box;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+
+      .key {
+        display: block;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        color: #aaaaaa;
+      }
+
+      .headline {
+        font-size: 1.3em;
+        display: block;
+        font-weight: bold;
+        margin: 10px 0;
+        text-align: left;
+      }
+
+      .subheadline {
+        font-size: 0.9em;
+        display: block;
+        text-align: left;
+        color: #aaaaaa;
+      }
+
+      .date {
+        display: block;
+        text-align: right;
+        border-top: 1px solid hsla(0,0%,100%,.3);
+        margin-top: 20px;
+        padding: 10px 5px 0 5px;
+        font-size: 0.8em;
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+      }
+    }
+  }
 </style>
