@@ -1,4 +1,4 @@
-# royer-challenge
+# Matt Royer nfhsnetwork-challenge
 
 ## Live demo
 https://nfhschallenge.matthewroyer.com
