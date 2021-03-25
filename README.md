@@ -1,4 +1,4 @@
-# PlayOn! Sports Challenge
+# PlayOn Sports Challenge
 Author: Matt Royer
 
 ## Live demo
@@ -6,11 +6,11 @@ https://nfhschallenge.matthewroyer.com
 
 ## How to run the project
 
-* Ensure your machine has npm and git installed on it.
-* Clone the repository to your local machine `git clone https://github.com/royermatt/nfhsnetwork-challenge.git`
-* Navigate to the repository `cd ./nfhsnetwork-challenge`
-* Run `npm instapp` to install project dependencies
-* Run `npm run serve` to run the local development instance
+1. Ensure your machine has npm and git installed on it.
+1. Clone the repository to your local machine `git clone https://github.com/royermatt/nfhsnetwork-challenge.git`
+1. Navigate to the repository `cd ./nfhsnetwork-challenge`
+1. Run `npm install` to install project dependencies
+1. Run `npm run serve` to run the local development instance
 
 ### Compiles and minifies for production
 ```
