@@ -1,7 +1,10 @@
-# Matt Royer nfhsnetwork-challenge
+# nfhsnetwork-challenge
+Author: Matt Royer
+
 
 ## Live demo
 https://nfhschallenge.matthewroyer.com
+
 
 ## Project setup
 ```
