@@ -1,9 +1,7 @@
 # royer-challenge
 
 ## Live demo
-```
 https://nfhschallenge.matthewroyer.com
-```
 
 ## Project setup
 ```
