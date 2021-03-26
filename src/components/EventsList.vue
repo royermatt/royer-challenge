@@ -12,7 +12,7 @@
                             <td class="key">{{ event.key }}</td>
                             <td class="headline"><a :href=event.site_url>{{ event.headline }}</a></td>
                             <td class="subheadline">{{ event.subheadline }}</td>
-                            <td class="date">{{ moment(event.date).local().format("MMMM Do, YYYY h:MM A") }}</td>
+                            <td class="date">{{ moment(event.date).local().format("MMMM Do, YYYY h:mm A") }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -23,7 +23,7 @@
                         <span class="key">{{ event.key }}</span>
                         <span class="headline">{{ event.headline }}</span>
                         <span class="subheadline">{{ event.subheadline }}</span>
-                        <span class="date">{{ moment(event.date).local().format("MMMM Do, YYYY h:MM A") }}</span>
+                        <span class="date">{{ moment(event.date).local().format("MMMM Do, YYYY h:mm A") }}</span>
                     </a>
                 </template>
             </template>
